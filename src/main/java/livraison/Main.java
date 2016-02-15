@@ -18,7 +18,7 @@ public class Main {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
 		
-		Client client = new Client("Paris");
+		Client client = new Client();
 		
 		entityManager.persist(client);
 		

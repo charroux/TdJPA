@@ -5,29 +5,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Client {
 	
-	String adresse;
 	long clef;
 	Livreur livreur;
+	Adresse adresse;
 
 	public Client() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Client(String adresse) {
-		super();
-		this.adresse = adresse;
-	}
-
-	public String getAdresse() {
+	@OneToOne
+	public Adresse getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(String adresse) {
+	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
 
