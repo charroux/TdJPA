@@ -5,6 +5,7 @@
     <persistence-unit name="manager1" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     
+    <class>livraison.Adresse</class>
     <class>livraison.Client</class>
     <class>livraison.ClientPremium</class>
     <class>livraison.Livreur</class>
