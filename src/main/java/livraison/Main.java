@@ -1,5 +1,7 @@
 package livraison;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -18,9 +20,32 @@ public class Main {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
 		
-		Client client = new Client();
+		Livreur livreur = new Livreur("le livreur");
+		List<Client> clients = livreur.getClients();
 		
+		Client client = new Client();
+		Adresse paris = new Adresse(10, "rue de Paris", "Paris");
+		client.setAdresse(paris);
+		paris.setClient(client);
+		
+		clients.add(client);
+		client.setLivreur(livreur);
+		
+		ClientPremium clientPremium = new ClientPremium();
+		Adresse marseille = new Adresse(10, "rue de Marseille", "Marseille");
+		clientPremium.setAdresse(marseille);
+		marseille.setClient(clientPremium);
+		
+		clients.add(clientPremium);
+		clientPremium.setLivreur(livreur);
+		
+		livreur.setClients(clients);
+		
+		entityManager.persist(paris);
 		entityManager.persist(client);
+		entityManager.persist(marseille);
+		entityManager.persist(clientPremium);
+		entityManager.persist(livreur);
 		
 		tx.commit();
 	}
