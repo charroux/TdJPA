@@ -53,7 +53,5 @@ public class Livreur {
 	public void setClients(List<Client> clients) {
 		this.clients = clients;
 	}
-	
-	
 
 }

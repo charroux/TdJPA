@@ -13,9 +13,15 @@ public class Client {
 	long clef;
 	Livreur livreur;
 	Adresse adresse;
+	String nom;
 
 	public Client() {
 		super();
+	}
+
+	public Client(String nom) {
+		super();
+		this.nom = nom;
 	}
 
 	@OneToOne
@@ -44,6 +50,20 @@ public class Client {
 
 	public void setLivreur(Livreur livreur) {
 		this.livreur = livreur;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [clef=" + clef + ", livreur=" + livreur + ", adresse="
+				+ adresse + ", nom=" + nom + "]";
 	}
 	
 	

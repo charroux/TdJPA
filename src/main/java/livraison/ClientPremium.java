@@ -7,6 +7,10 @@ public class ClientPremium extends Client{
 	
 	int reduction;
 
+	public ClientPremium(String nom) {
+		super(nom);
+	}
+
 	public ClientPremium() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -18,6 +22,12 @@ public class ClientPremium extends Client{
 
 	public void setReduction(int reduction) {
 		this.reduction = reduction;
+	}
+
+	@Override
+	public String toString() {
+		return "ClientPremium [reduction=" + reduction + ", toString()="
+				+ super.toString() + "]";
 	}
 	
 	

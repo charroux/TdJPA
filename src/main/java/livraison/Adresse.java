@@ -68,7 +68,7 @@ public class Adresse {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	
-	
+
+
 
 }
